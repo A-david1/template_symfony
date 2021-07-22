@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des menus{% endblock %}
+
+{% block body %}
+    <a href="{{ path('menu_new') }}">Créer un nouveau menu</a>
+    <h2>Liste des menus</h2>
+    {% for menu in menus %}
+        <a href="{{ path('menu_show', {'id': menu.id}) }}">
+            <div>
+                Menu n°{{ menu.id }} du {{ menu.startedAt|date("d/m/Y") }} au {{ menu.finishedAt|date("d/m/Y") }}
+            </div>
+        </a>
+    {% endfor %}
+{% endblock %}

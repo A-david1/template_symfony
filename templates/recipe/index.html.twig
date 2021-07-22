@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des recettes{% endblock %}
+
+{% block body %}
+    <h2>Liste des recettes</h2>
+    {% for recipe in recipes %}
+        <a href="{{ path('recipe_show', {'id': recipe.id}) }}"><div>{{ recipe.title }}</div></a>
+    {% endfor %}
+{% endblock %}

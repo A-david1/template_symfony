@@ -1,0 +1,29 @@
+.home-page {
+  background: linear-gradient(0.25turn, var(--primary), var(--secondary));
+  height: 100vh;
+  color: white;
+}
+
+.home-page h1 {
+  color: white;
+  font-size: 6rem;
+}
+
+.home-page .btn {
+  border: 1px transparent solid;
+}
+
+.home-page .btn-primary {
+  border: 1px transparent solid;
+  background: var(--secondary);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.home-page .btn-primary:hover {
+  border: 1px transparent solid;
+  background: var(--primary);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+

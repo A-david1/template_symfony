@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Menu n° {{ menu.id }}{% endblock %}
+
+{% block body %}
+    <a href="{{ path('menu_index') }}">Retour à la liste des menus</a>
+    <h2>Menu du {{ menu.startedAt|date("d/m/Y") }} au {{ menu.finishedAt|date("d/m/Y") }}</h2>
+    <div class="d-flex">
+    {% for i in 0..6 %}
+        <div class="d-flex flex-column">
+            {% for shift in menu.shifts|slice( i*2,2)  %}
+                <div class="p-3">
+                    {% if shift.recipe %}
+                        <div>{{ shift.identifier }}</div>
+                        <a href="{{ path('recipe_show', {'id': shift.recipe.id}) }}">{{ shift.recipe.title }}</a>
+                    {% else %}
+                        ---
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

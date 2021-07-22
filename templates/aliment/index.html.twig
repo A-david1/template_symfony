@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des aliments{% endblock %}
+
+{% block body %}
+    <a href="{{ path('aliment_new') }}">Ajouter un nouvel aliment</a>
+    <h2>Liste des aliments</h2>
+    {% for aliment in aliments %}
+        <div>{{ aliment.name }}</div>
+    {% endfor %}
+{% endblock %}

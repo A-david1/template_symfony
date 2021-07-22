@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}JARVIS{% endblock %}
+{% block navbar %}{% endblock %}
+{% block body %}
+    <div class="home-page d-flex flex-column align-items-center justify-content-center flex-wrap pb-5">
+        <div class="d-flex align-items-center justify-content-center flex-wrap">
+            <a class="text-primary p-4 btn btn-light m-4" href="{{ path('recipe_index') }}">Recettes</a>
+            <a class="text-primary p-4 btn btn-light m-4" href="{{ path('aliment_index') }}">Aliments</a>
+            <a class="text-primary p-4 btn btn-light m-4" href="{{ path('menu_index') }}">Menus</a>
+        </div>
+        <div class="text-center my-5">
+            <h1>Jarvis</h1>
+            <p>Un menu, Une liste de courses</p>
+        </div>
+        <div class="d-flex align-items-center justify-content-around mb-5">
+            <a class="btn btn-primary p-5" href="{{ path('menu_new') }}">Créer un menu</a>
+        </div>
+    </div>
+{% endblock %}
